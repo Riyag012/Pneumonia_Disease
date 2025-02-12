@@ -74,10 +74,11 @@ Visualization of training performance (loss and accuracy curves) is available in
 
 ## File Structure
 ```
-├── Pneumonia Detection.ipynb  # Jupyter Notebook with code
-├── model_vgg16.h5             # Trained model file
-├── dataset/                   # Dataset (Not included, download separately)
-└── README.md                  # Project documentation
+├── Pneumonia Disease
+    ├── Pneumonia Detection.ipynb  # Jupyter Notebook with code
+    ├── model_vgg16.h5             # Trained model file
+    ├── dataset/                   # Dataset (Not included, download separately)
+    └── README.md                  # Project documentation
 ```
 
 ## Future Improvements
