@@ -1,0 +1,31 @@
+# Ignore virtual environment
+env/
+env/*
+.env
+# Ignore virtual environment
+env/
+env/*
+env/Lib/
+env/Lib/site-packages/
+.env
+
+
+# Ignore compiled Python files
+__pycache__/
+*.pyc
+*.pyo
+
+# Ignore Jupyter notebook checkpoints
+.ipynb_checkpoints/
+
+# Ignore datasets (modify if needed)
+data/
+dataset/
+*.csv
+*.zip
+*.h5
+
+# Ignore logs and temporary files
+logs/
+*.log
+*.tmp
