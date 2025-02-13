@@ -21,7 +21,7 @@ This project utilizes a **VGG16-based deep learning model** to detect **pneumoni
 ## Overview
 Pneumonia is a severe lung infection that requires early detection for effective treatment. This project aims to automate pneumonia detection from X-ray images using **deep learning** and **transfer learning (VGG16)**.
 
-## 📊 Dataset
+## Dataset
 The dataset is sourced from **Kaggle's Chest X-ray dataset**, which contains labeled X-ray images for **Normal** and **Pneumonia** cases.
 
 - **Train Set**: Used for training the model
@@ -30,7 +30,7 @@ The dataset is sourced from **Kaggle's Chest X-ray dataset**, which contains lab
 
 📌 **Dataset Link**: [Chest X-ray Dataset](https://www.kaggle.com/paultimothymooney/chest-xray-pneumonia)
 
-## 🏗 Model Architecture
+## Model Architecture
 The model is built using **VGG16 (pretrained on ImageNet)**, with the final layers modified for binary classification.
 
 - **Feature Extractor**: VGG16 (pretrained, frozen layers)
@@ -39,7 +39,7 @@ The model is built using **VGG16 (pretrained on ImageNet)**, with the final laye
 - **Loss Function**: Binary Cross-Entropy
 - **Optimizer**: Adam
 
-## ⚙ Installation & Setup
+## Installation & Setup
 ### 1️⃣ Clone the Repository
 ```sh
 git clone https://github.com/yourusername/pneumonia-detection.git
@@ -67,7 +67,7 @@ python train.py
 ```
 This will train the model on the dataset and save the trained model.
 
-## 🌍 Deployment
+## Deployment
 The model is deployed using **Streamlit** on **Streamlit Cloud**.
 
 To deploy locally, run:
@@ -88,13 +88,13 @@ To deploy online, follow these steps:
 3. The model predicts whether the image is **Normal** or indicates **Pneumonia**.
 4. The result is displayed with a confidence score.
 
-## 📈 Results
+## Results
 The model achieved:
 - **Training Accuracy**: 91.5%
 - **Validation Accuracy**: 84.78%
 - **Validation Loss**: 0.3523
 
-## 🛠 Technologies Used
+## Technologies Used
 - **Python**
 - **TensorFlow / Keras**
 - **Streamlit**
@@ -102,7 +102,7 @@ The model achieved:
 - **Matplotlib**
 - **Google Colab (for training)**
 
-## 🚀 Future Enhancements
+## Future Enhancements
 - Improve accuracy using more advanced architectures like **EfficientNet**.
 - Deploy on **Hugging Face Spaces** or **Flask-based Web App**.
 - Implement **Grad-CAM visualization** to explain model predictions.
