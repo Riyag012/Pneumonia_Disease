@@ -60,7 +60,7 @@ source env/bin/activate
 pip install -r requirements.txt
 ```
 
-## 🚀 Model Training
+## Model Training
 To train the model, run:
 ```sh
 python train.py
@@ -82,7 +82,7 @@ To deploy online, follow these steps:
 
 🔗 **Live Deployment**: [Pneumonia Detection Web App](https://pneumonia-disease-detection.streamlit.app/)
 
-## 🔧 Usage
+## Usage
 1. Open the [web app](https://pneumonia-disease-detection.streamlit.app/)
 2. Upload a chest X-ray image.
 3. The model predicts whether the image is **Normal** or indicates **Pneumonia**.
