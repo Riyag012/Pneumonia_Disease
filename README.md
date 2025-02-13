@@ -1,95 +1,111 @@
 # Pneumonia Detection using Deep Learning
 
-## Table of Contents
-1. [Project Overview](#project-overview)
-2. [Dataset](#dataset)
-3. [Model Architecture](#model-architecture)
-4. [Training Details](#training-details)
-5. [Installation & Usage](#installation--usage)
-6. [Results](#results)
-7. [File Structure](#file-structure)
-8. [Future Improvements](#future-improvements)
-9. [Acknowledgments](#acknowledgments)
+![Pneumonia Detection](https://www.cdc.gov/pneumonia/images/lungs.jpg)
 
-## Project Overview
-This project aims to develop a deep learning model for detecting pneumonia from chest X-ray images using a convolutional neural network (CNN).
-The VGG16 model is used as a feature extractor with a custom classification head. The goal is to assist healthcare professionals in diagnosing pneumonia
-effectively and accurately.
+This project utilizes a **VGG16-based deep learning model** to detect **pneumonia** from chest X-ray images. The model is deployed using **Streamlit** and is available online.
 
-## Dataset
-The dataset used consists of chest X-ray images categorized into two classes:
-- **Normal:** Healthy lung images
-- **Opacity/Pneumonia:** Lungs infected with pneumonia
+🔗 **Live Demo**: [Pneumonia Detection Web App](https://pneumonia-disease-detection.streamlit.app/)
 
-The dataset is sourced from [Kaggle's Chest X-Ray dataset](https://www.kaggle.com/paultimothymooney/chest-xray-pneumonia) and preprocessed before training.
+## 📌 Table of Contents
+- [Overview](#overview)
+- [Dataset](#dataset)
+- [Model Architecture](#model-architecture)
+- [Installation & Setup](#installation--setup)
+- [Model Training](#model-training)
+- [Deployment](#deployment)
+- [Usage](#usage)
+- [Results](#results)
+- [Technologies Used](#technologies-used)
+- [Future Enhancements](#future-enhancements)
 
-## Model Architecture
-The model is built using **Transfer Learning** with the **VGG16** architecture:
-- Pretrained **VGG16** model (without top layers)
-- Custom **fully connected layers** added for classification
-- **Binary classification** (Pneumonia vs. Normal)
-- **Adam optimizer** used for better convergence
+---
 
-## Training Details
-- **Batch Size:** 16
-- **Epochs:** 20
-- **Optimizer:** Adam
-- **Learning Rate:** 1e-4
-- **Class Imbalance Handling:** Weighted loss applied
-- **Training Accuracy:** *91.97*
-- **Validation Accuracy:** *87.02*
+## 📖 Overview
+Pneumonia is a severe lung infection that requires early detection for effective treatment. This project aims to automate pneumonia detection from X-ray images using **deep learning** and **transfer learning (VGG16)**.
 
-## Installation & Usage
-### Prerequisites
-Ensure you have Python and the following dependencies installed:
-```bash
-pip install tensorflow keras numpy pandas matplotlib scikit-learn
-```
+## 📊 Dataset
+The dataset is sourced from **Kaggle's Chest X-ray dataset**, which contains labeled X-ray images for **Normal** and **Pneumonia** cases.
 
-### Running the Model
-1. Clone this repository:
-```bash
+- **Train Set**: Used for training the model
+- **Validation Set**: Used to fine-tune hyperparameters
+- **Test Set**: Used to evaluate the model performance
+
+📌 **Dataset Link**: [Chest X-ray Dataset](https://www.kaggle.com/paultimothymooney/chest-xray-pneumonia)
+
+## 🏗 Model Architecture
+The model is built using **VGG16 (pretrained on ImageNet)**, with the final layers modified for binary classification.
+
+- **Feature Extractor**: VGG16 (pretrained, frozen layers)
+- **Classifier**: GlobalAveragePooling + Dense layers
+- **Activation**: ReLU & Sigmoid
+- **Loss Function**: Binary Cross-Entropy
+- **Optimizer**: Adam
+
+## ⚙ Installation & Setup
+### 1️⃣ Clone the Repository
+```sh
 git clone https://github.com/yourusername/pneumonia-detection.git
 cd pneumonia-detection
 ```
-2. Open the Jupyter Notebook:
-```bash
-jupyter notebook
-```
-3. Run the `Pneumonia Detection.ipynb` file step by step.
 
-4. To use the trained model, load it using:
-```python
-from keras.models import load_model
-model = load_model('model_vgg16.h5')
+### 2️⃣ Create & Activate Virtual Environment
+```sh
+python -m venv env
+# Activate on Windows
+env\Scripts\activate
+# Activate on Mac/Linux
+source env/bin/activate
 ```
 
-## Results
+### 3️⃣ Install Dependencies
+```sh
+pip install -r requirements.txt
+```
+
+## 🚀 Model Training
+To train the model, run:
+```sh
+python train.py
+```
+This will train the model on the dataset and save the trained model.
+
+## 🌍 Deployment
+The model is deployed using **Streamlit** on **Streamlit Cloud**.
+
+To deploy locally, run:
+```sh
+streamlit run app.py
+```
+
+To deploy online, follow these steps:
+1. Push your repository to GitHub.
+2. Create an account on [Streamlit Cloud](https://share.streamlit.io/).
+3. Deploy by selecting your GitHub repository.
+
+🔗 **Live Deployment**: [Pneumonia Detection Web App](https://pneumonia-disease-detection.streamlit.app/)
+
+## 🔧 Usage
+1. Open the [web app](https://pneumonia-disease-detection.streamlit.app/)
+2. Upload a chest X-ray image.
+3. The model predicts whether the image is **Normal** or indicates **Pneumonia**.
+4. The result is displayed with a confidence score.
+
+## 📈 Results
 The model achieved:
-- **Training Accuracy:** *91.97*
-- **Validation Accuracy:** *87.02*
-- **Validation Loss:** *0.3149*
+- **Training Accuracy**: 91.5%
+- **Validation Accuracy**: 84.78%
+- **Validation Loss**: 0.3523
 
-Visualization of training performance (loss and accuracy curves) is available in the notebook.
+## 🛠 Technologies Used
+- **Python**
+- **TensorFlow / Keras**
+- **Streamlit**
+- **PIL**
+- **Matplotlib**
+- **Google Colab (for training)**
 
-## File Structure
-```
-├── Pneumonia Disease
-    ├── Pneumonia Detection.ipynb  # Jupyter Notebook with code
-    ├── model_vgg16.h5             # Trained model file
-    ├── dataset/                   # Dataset (Not included, download separately)
-    └── README.md                  # Project documentation
-```
-
-## Future Improvements
-- Use **more complex architectures** like EfficientNet for better accuracy.
-- **Data Augmentation** to improve generalization.
-- Hyperparameter tuning for further optimization.
-- Deployment as a web app for real-time predictions.
-
-## Acknowledgments
-- **Kaggle Chest X-ray Dataset** for providing the dataset.
-- **TensorFlow/Keras** for deep learning tools.
-- **Open-source contributors** for making resources available.
-
+## 🚀 Future Enhancements
+- Improve accuracy using more advanced architectures like **EfficientNet**.
+- Deploy on **Hugging Face Spaces** or **Flask-based Web App**.
+- Implement **Grad-CAM visualization** to explain model predictions.
 
