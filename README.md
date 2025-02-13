@@ -1,7 +1,5 @@
 # Pneumonia Detection using Deep Learning
 
-![Pneumonia Detection](https://www.cdc.gov/pneumonia/images/lungs.jpg)
-
 This project utilizes a **VGG16-based deep learning model** to detect **pneumonia** from chest X-ray images. The model is deployed using **Streamlit** and is available online.
 
 🔗 **Live Demo**: [Pneumonia Detection Web App](https://pneumonia-disease-detection.streamlit.app/)
