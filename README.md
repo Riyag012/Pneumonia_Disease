@@ -18,7 +18,7 @@ This project utilizes a **VGG16-based deep learning model** to detect **pneumoni
 
 ---
 
-## 📖 Overview
+## Overview
 Pneumonia is a severe lung infection that requires early detection for effective treatment. This project aims to automate pneumonia detection from X-ray images using **deep learning** and **transfer learning (VGG16)**.
 
 ## 📊 Dataset
